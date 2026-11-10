@@ -1,19 +1,12 @@
 import pg from "pg";
 import dotenv from "dotenv";
 
-dotenv.config();
-
-console.log({
-  DB_USER: process.env.DB_USER,
-  DB_HOST: process.env.DB_HOST,
-  DB_NAME: process.env.DB_NAME,
-  DB_PORT: process.env.DB_PORT,
-  DB_PASSWORD_EXISTS: Boolean(process.env.DB_PASSWORD)
+dotenv.config({
+  path: new URL("../.env", import.meta.url)
 });
 
+
 const { Pool } = pg;
-
-
 
 const pool = new Pool({
   user: process.env.DB_USER,
