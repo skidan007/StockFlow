@@ -2,6 +2,7 @@
 import express from "express";
 import productRoutes from "./routes/productRoutes.js";
 import inventoryRoutes from "./routes/inventoryRoutes.js";
+import supplierRoutes from "./routes/supplierRoutes.js";
 
 const app = express();
 
@@ -24,5 +25,6 @@ app.get("/api/health", async (req, res) => {
 
 app.use("/api/products", productRoutes);
 app.use("/api/inventory", inventoryRoutes);
+app.use("/api/suppliers", supplierRoutes);
 
 export default app;
